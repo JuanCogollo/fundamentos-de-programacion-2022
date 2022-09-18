@@ -1,7 +1,7 @@
 def main():
-    salarios_input = 1
     salarios_arr = []
 
+    salarios_input = 1
     while salarios_input != 0:
         salarios_input = int(input())
         salarios_arr.append(salarios_input)
