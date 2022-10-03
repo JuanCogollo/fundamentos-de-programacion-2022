@@ -9,8 +9,7 @@ def main():
         max_weight += float(input())
         if max_weight <= max_capability:
             how_many_elephants += 1
-        else:
-            continue
+
 
     print(how_many_elephants)
 

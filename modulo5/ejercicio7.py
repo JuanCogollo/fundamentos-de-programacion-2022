@@ -1,15 +1,16 @@
-def main():
-    total_sq = int(input())
-    side = float(input())
-    increment = float(input())
-    area = 0
+# def main():
+cantidad_de_lotes = int(input())
+lado_del_cuadrado = float(input())
+incremento = float(input())
 
-    for i in range(total_sq):
-        area += side ** 2
-        side += increment
+area = 0
 
-    print(f'El area total es de {area} metros cuadrados')
+for i in range(cantidad_de_lotes):
+    area += lado_del_cuadrado ** 2
+    lado_del_cuadrado += incremento
+
+print(f'El area total es de {area} metros cuadrados')
 
 
-if __name__ == '__main__':
-    main()
+# if __name__ == '__main__':
+#     main()

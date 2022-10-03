@@ -12,7 +12,6 @@ def main():
     for i in id_personas:
         if 1995 - i in id_personas:
             suman_1995 += 1
-            # id_personas.remove(i) *---------| Legacy error
 
     print(suman_1995 / 2)
 
