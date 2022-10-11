@@ -1,0 +1,71 @@
+baraja inglesa : 52 cartas
+distribuidas en 4 palos diferentes:
+
+	- picas
+	- treboles
+	- corazones
+
+De cada 1, trece cartas [2..10] + 
+	4 figuras 
+	[J, Q, K, A]=[11, 12, 13, 14]
+
+la mejor mano con cinco cartas:
+
+las posibles:
+
+1. 
+	Escalera real o flor imperial
+	-cinco cartas seguidas 
+	del mismo palo del 10 al as-
+2. 
+
+3. 
+	Poker
+	-Cuatro cartas iguales en 
+	su valor-
+4. 
+	Full	
+
+
+__________________________________
+
+[] escalera normal: 
+	cinco cartas consecutivas 
+	sin importar el palo
+
+[] color:
+	cinco cartas del mismo 
+	palo sin ser consecutivas
+
+[] escalera de color:
+	cinco cartas consecutivas 
+	del mismo palo.	
+
+[] escalera real: 
+	cinco cartas seguidas del 
+	mismo palo del 10 al as.
+
+[] no es ninguna.
+	
+__________________________________
+
+entrada:
+	
+	[] M manos a evaluar
+	[] Por cada M, 10 inputs de 
+		las cinco Ct. Cada Ct 
+	[] 5 inputs para el valor 
+		[2..14]
+	[] 5 inputs para el palo
+		[P, D, T, C]
+	
+__________________________________
+
+salida:
+	[] M => [
+		"Escalera normal",
+		"Color",
+		"Escalera de color",
+		"Escalera real", 
+		"Otra mano"			
+		]
