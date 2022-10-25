@@ -1,11 +1,55 @@
+def escalera_normal(cartas):
+    for i in range(1, 5):
+        if cartas[i][0] != cartas[i - 1][0] + 1:
+            return False
+    return True
+
+
+def color(cartas):
+    for i in range(len(cartas)):
+        if cartas[i][1] != cartas[i - 1][1]:
+            return False
+    return True
+
+
+def escalera_color(cartas):
+    if escalera_normal(cartas) and color(cartas):
+        return True
+    return False
+
+
+def escalera_real(cartas):
+    val = 10
+    for i in range(len(cartas)):
+        if (
+                cartas[i][0] != val
+                or
+                cartas[i][1] != cartas[i - 1][1]
+        ):
+            return False
+        val += 1
+    return True
+
 
 def carta(v, p):
-    new_carta = [v, p]
-    return new_carta
+    return [v, p]
+
+
+def what_it_is(cartas):
+    cartas_sorted = sorted(cartas)
+    if escalera_real(cartas_sorted):  # consecutivas 10..14 | mismo palo
+        return print('Escalera real')
+    elif escalera_color(cartas_sorted):  # consecutivas
+        return print('Escalera de color')
+    elif escalera_normal(cartas_sorted):  # consecutivas
+        return print('Escalera normal')
+    elif color(cartas_sorted):  # mismo palo
+        return print('Color')
+    else:
+        return print('Otra mano')
 
 
 def main():
-
     cartas = []
 
     M = int(input())
@@ -20,38 +64,9 @@ def main():
             # print('Cartas', cartas)
             counter += 1
 
-        print('Evaluation unimplemented.')
+        what_it_is(cartas)
+        cartas.clear()
 
 
 if __name__ == '__main__':
     main()
-
-# ej
-
-# 2
-
-# mano 1
-# 7
-# D
-# 6
-# C
-# 9
-# T
-# 8
-# P
-# 5
-# T
-# escalera normal
-
-# mano 2
-# 11
-# C
-# 10
-# C
-# 13
-# C
-# 14
-# C
-# 12
-# C
-# escalera real
