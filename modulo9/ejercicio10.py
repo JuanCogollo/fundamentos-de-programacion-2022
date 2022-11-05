@@ -1,23 +1,28 @@
-# todo: fix it
+import re
+
+
+def flatten(list_):
+    return [item for sublist in list_ for item in sublist]
+
+
 def causativos(line_):
-    total = 0
-    palabras_causativas = ['por tanto', 'dado que', 'por consiguiente', 'asi pues', 'por ende']
+    palabras_causativas = ['por tanto', 'dado que',
+                           'por consiguiente', 'asi pues', 'por ende']
+    matches = []
     for i in range(len(palabras_causativas)):
-        if line_.find(palabras_causativas[i]) != -1:
-            total += 1
+        matches.append(re.findall(palabras_causativas[i], line_))
 
-    return total
+    return len(flatten(matches))
 
 
-# todo: fix it
 def opositivos(line_):
-    total = 0
-    palabras_opositivas = ['sin embargo', 'no obstante', 'ahora bien', 'aun asi']
+    palabras_opositivas = ['sin embargo',
+                           'no obstante', 'ahora bien', 'aun asi']
+    matches = []
     for i in range(len(palabras_opositivas)):
-        if line_.find(palabras_opositivas[i]) != -1:
-            total += 1
+        matches.append(re.findall(palabras_opositivas[i], line_))
 
-    return total
+    return len(flatten(matches))
 
 
 def opositivos_causativos(file):
@@ -26,7 +31,6 @@ def opositivos_causativos(file):
         print(f'Opositivos {opositivos(line)} Causativos {causativos(line)}')
 
 
-# todo: fix it
 def main():
     file = open("files/conversaciones.txt", "r")
     # file = open("conversaciones.txt", "r")  # todo: ticademia version
