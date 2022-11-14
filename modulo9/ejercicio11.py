@@ -1,11 +1,3 @@
-def to_arr(string):
-    return [str(a) for a in str(string)]
-
-
-def flatten(list_):
-    return [item for sublist in list_ for item in sublist]
-
-
 def is_trifelio(file):
     for line in file:
         words = line.split('-')
@@ -39,6 +31,3 @@ def main():
 
 
 main()
-
-
-

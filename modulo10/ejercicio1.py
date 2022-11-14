@@ -22,14 +22,7 @@ def ordering(arr):
         else:
             continue
 
-    arr_cleaned.sort(key=lambda x: x[3], reverse=True)
-
-    for i in range(1, len(arr_cleaned)):
-        f = arr_cleaned[i - 1]
-        if f[3] == arr_cleaned[i][3] and f[1] < arr_cleaned[i][1]:
-            arr_cleaned[i - 1], arr_cleaned[i] = arr_cleaned[i], arr_cleaned[i - 1]
-        else:
-            continue
+    arr_cleaned.sort(key=lambda x: (x[3], x[1]), reverse=True)
 
     for i in range(len(arr_cleaned)):
         arr_cleaned[i].pop(0)
