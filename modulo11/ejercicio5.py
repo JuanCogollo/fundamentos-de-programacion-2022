@@ -1,9 +1,9 @@
+# todo!!
 from datetime import timedelta
 
 
 def time_in(registers):
     time_in_barber = []
-    h, m, s = "", "", ""
     for r in registers:
         date, time_go, time_back = r
         h0, m0, s0 = time_go.split(":")
@@ -14,7 +14,10 @@ def time_in(registers):
 
         time_in_barber.append(time_left)
 
-    print(time_in_barber)
+    prom = sum(time_in_barber, start=timedelta()) / len(time_in_barber)
+    h, m, s = prom.seconds // 3600, prom.seconds // 60 % 60, prom.seconds % 60
+
+    print(f"{h} horas, {m} minutos, {s} segundos")
 
 
 def main():
